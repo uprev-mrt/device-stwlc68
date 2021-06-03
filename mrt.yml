@@ -1,4 +1,4 @@
 ---
-!include device.yml
+name: STWLC68
 category: Device/Power
 requires: [RegDevice]
