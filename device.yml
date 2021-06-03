@@ -1,0 +1,250 @@
+---
+name: stwlc68
+author: Mark Bayless
+created: 05/26/2021
+description: Wireless charger
+datasheet: https://https://www.st.com/resource/en/datasheet/stwlc68.pdf
+mfg: STMicroelectronics
+mfg_pn: STWLC68JRH
+digikey_pn: 497-STWLC68JRHTR-ND
+prefix: stw  #prefix used in code generation
+bus: I2C    # defines the buses that can be used to access registers 
+i2c_addr: 0xC2  
+
+###########################################################################################################
+#                                   REGISTERS                                                             #
+###########################################################################################################
+
+registers:               
+    - CHIP_ID:        { addr: 0x0000 , type: uint16, perm: R, desc: Chip Identifier }
+    - CHIP_REV:       { addr: 0x0002 , type: uint8,  perm: R, desc: Chip Revision }
+    - ROM_ID:         { addr: 0x0006 , type: uint16, perm: R, desc: ROM Identifier }
+    - CFG_ID:         { addr: 0x0008 , type: uint16, perm: R, desc: OTP memory configuration ID }
+    - TRIM_ID:        { addr: 0x000A , type: uint16, perm: R, desc: Production trimming version ID }
+    - PATCH_ID:       { addr: 0x000C , type: uint16, perm: R, desc: OTP patch version ID }
+    - INT_EN:         { addr: 0x0010 , type: uint16, perm: RW, desc: Int En }
+    - INT_CLR:        { addr: 0x0012 , type: uint16, perm: RW, desc: Int Clr }
+    - INT_LATCH:      { addr: 0x0014 , type: uint16, perm: RW, desc: Int Latch }
+    - INT_STA:        { addr: 0x0016 , type: uint16, perm: RW, desc: Int Sta }
+    - OTP_LATCH:      { addr: 0x0018 , type: uint8,  perm: RW, desc: OTP Latch }
+    - OVP_LATCH:      { addr: 0x0019 , type: uint8,  perm: RW, desc: OVP Latch }
+    - OCP_LATCH:      { addr: 0x001A , type: uint8,  perm: RW, desc: OCP Latch }
+    - SYS_ERR0:       { addr: 0x001C , type: uint8,  perm: R, desc: SYS Err0 }
+    - SYS_ERR1:       { addr: 0x001D , type: uint8,  perm: R, desc: SYS Err1 }
+    - SYS_ERR2:       { addr: 0x001E , type: uint8,  perm: R, desc: SYS Err2 }
+    - DIR_CMD:        { addr: 0x0020 , type: uint16, perm: RW, desc: Dir Cmd }
+    - AC_FREQ:        { addr: 0x0038 , type: uint16, perm: RW, desc: Rectifier Operating Frequency (in kHz) }
+    - S_STR_TX:       { addr: 0x003A , type: uint8,  perm: RW, desc: Signal Strength Level sent to transmitter }
+    - VOUT_SET:       { addr: 0x003C , type: uint16, perm: RW, desc: Output Voltage setting 25 mV to 22 V (25 mV/step) }
+    - VTH_AOE:        { addr: 0x0040 , type: uint8,  perm: RW, desc: Voltage threshold for Automatic Output Enable 240 mV to 1049 mV (16 mV/step) }
+    - LCR_THR:        { addr: 0x0041 , type: uint8,  perm: RW, desc: Normal-Current Range (NCR) to Low-Current Range (LCR) threshold (4 mA/step) }
+    - LCR_HYST:       { addr: 0x0042 , type: uint8,  perm: RW, desc: Low-Current Range (LCR) to Normal-Current Range (NCR) hysteresis (4 mA/step) }
+    - MOD_CFG:        { addr: 0x0043 , type: uint8,  perm: RW, desc: Mod Cfg }
+    - IDMYL_SET:      { addr: 0x0044 , type: uint8,  perm: RW, desc: IDMYL Set }
+    - VRECT_MIN:      { addr: 0x0045 , type: uint8,  perm: RW, desc: VRECT Min }
+    - VDROP_V0:       { addr: 0x0049 , type: uint8,  perm: RW, desc: Linear regulator target drop-out voltage setpoint 0 }
+    - VDROP_V1:       { addr: 0x004A , type: uint8,  perm: RW, desc: Linear regulator target drop-out voltage setpoint 1 }
+    - VDROP_V2:       { addr: 0x004B , type: uint8,  perm: RW, desc: Linear regulator target drop-out voltage setpoint 2 }
+    - VDROP_V3:       { addr: 0x004C , type: uint8,  perm: RW, desc: Linear regulator target drop-out voltage setpoint 3 }
+    - VDROP_C1:       { addr: 0x004D , type: uint8,  perm: RW, desc: Linear regulator target drop-out voltage current threshold 1 }
+    - VDROP_C2:       { addr: 0x004E , type: uint8,  perm: RW, desc: Linear regulator target drop-out voltage current threshold 2}
+    - VDROP_C3:       { addr: 0x004F , type: uint8,  perm: RW, desc: Linear regulator target drop-out voltage current threshold 3 }
+    - MSG_TX0:        { addr: 0x0050 , type: uint8,  perm: RW, desc: Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) }
+    - MSG_TX1:        { addr: 0x0051 , type: uint8,  perm: RW, desc: Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) }
+    - MSG_TX2:        { addr: 0x0052 , type: uint8,  perm: RW, desc: Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) }
+    - MSG_TX3:        { addr: 0x0053 , type: uint8,  perm: RW, desc: Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) }
+    - MSG_TX4:        { addr: 0x0054 , type: uint8,  perm: RW, desc: Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) }
+    - MSG_TX5:        { addr: 0x0055 , type: uint8,  perm: RW, desc: Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) }
+    - MSG_TX6:        { addr: 0x0056 , type: uint8,  perm: RW, desc: Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) }
+    - MSG_TX7:        { addr: 0x0057 , type: uint8,  perm: RW, desc: Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) }
+    - MSG_TX8:        { addr: 0x0058 , type: uint8,  perm: RW, desc: Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) }
+    - EPT_MSG:        { addr: 0x0062 , type: uint8,  perm: RW, desc: EPT Message (root cause event) added to EPT packet (see DIR_CMD register) }
+    - FOD_CTC:        { addr: 0x0080 , type: uint8,  perm: RW, desc: FOD Current Threshold Calibration }
+    - FOD_GSC:        { addr: 0x0083 , type: uint8,  perm: RW, desc: FOD Gain Scaler Calibration }
+    - FOD_OLC:        { addr: 0x0087 , type: uint8,  perm: RW, desc: FOD Offset Level Calibration }
+    - FOD_DCR:        { addr: 0x008B , type: uint8,  perm: RW, desc: Coil DC-Resistance for FOD calculation }
+    - VRECT_RE:       { addr: 0x0090 , type: uint16, perm: RW, desc: Voltage Regulation Error (difference in mV) between actual and target VRECT used to calculate CEP for 0x0091 the transmitter }
+    - RPP_TX:         { addr: 0x0092 , type: uint16, perm: RW, desc: Received Power (comprehensive of losses) level Packet sent to transmitter }
+    - SS_MIN_TX:      { addr: 0x0096 , type: uint8,  perm: RW, desc: Minimum Signal-Strength level for proceeding to PING phase }
+    - CS_OFFS:        { addr: 0x0097 , type: uint8,  perm: RW, desc: Current sensor offset adjustment (in mA) }
+    - IDLE_CC:        { addr: 0x0098 , type: uint8,  perm: RW, desc: Chip idle current consumption (in mA) }
+    - PMAX_PTC:       { addr: 0x00A1 , type: uint8,  perm: RW, desc: Maximum power capability established during Power Transfer Contract }
+    - TRECT_OTP:      { addr: 0x00A6 , type: uint16, perm: RW, desc: Over-Temperature detection Threshold related to Rectifier Temperature sensor }
+    - TLR_OTP:        { addr: 0x00A8 , type: uint16, perm: RW, desc: Over-Temperature detection Threshold related to main Linear Regulator Temperature sensor }
+    - VNTC_OTP:       { addr: 0x00AA , type: uint16, perm: RW, desc: Over-Temperature detection Threshold related to external NTC pin }
+    - VRECT_OVP:      { addr: 0x00AC , type: uint16, perm: RW, desc: VRECT Over-Voltage detection Threshold (Adjustable OVP-Clamper) }
+    - IRECT_OCP:      { addr: 0x00AE , type: uint16, perm: RW, desc: IRECT Over-Current detection Threshold }
+    - PROT_EN0:       { addr: 0x00C0 , type: uint8,  perm: RW, desc: Prot En }
+    - PROT_EN1:       { addr: 0x00C1 , type: uint8,  perm: RW, desc: Prot En }
+    - PROT_EN2:       { addr: 0x00C2 , type: uint8,  perm: RW, desc: Prot En }
+    - PROT_EPT0:      { addr: 0x00C4 , type: uint8,  perm: RW, desc: Prot Ept }
+    - PROT_EPT1:      { addr: 0x00C5 , type: uint8,  perm: RW, desc: Prot Ept }
+    - PROT_EPT2:      { addr: 0x00C6 , type: uint8,  perm: RW, desc: Prot Ept }
+    - PROT_OD0:       { addr: 0x00C8 , type: uint8,  perm: RW, desc: Prot Ed }
+    - PROT_OD1:       { addr: 0x00C9 , type: uint8,  perm: RW, desc: Prot Ed }
+    - PROT_OD2:       { addr: 0x00CA , type: uint8,  perm: RW, desc: Prot Ed }
+    - MFR_ID1:        { addr: 0x00D3 , type: uint8,  perm: RW, desc: Manufacturer ID (MSByte) }
+    - MFR_ID0:        { addr: 0x00D4 , type: uint8,  perm: RW, desc: Manufacturer ID (LSByte) }
+    - BDEV_ID3:       { addr: 0x00D5 , type: uint8,  perm: RW, desc: Basic Device ID (MSByte) }
+    - BDEV_ID2:       { addr: 0x00D6 , type: uint8,  perm: RW, desc: Basic Device ID }
+    - BDEV_ID1:       { addr: 0x00D7 , type: uint8,  perm: RW, desc: Basic Device ID }
+    - BDEV_ID0:       { addr: 0x00D8 , type: uint8,  perm: RW, desc: Basic Device ID (LSByte) }
+    - XDEV_ID7:       { addr: 0x00D9 , type: uint8,  perm: RW, desc: Extended Device ID (MSByte) }
+    - XDEV_ID6:       { addr: 0x00DA , type: uint8,  perm: RW, desc: Extended Device ID }
+    - XDEV_ID5:       { addr: 0x00DB , type: uint8,  perm: RW, desc: Extended Device ID }
+    - XDEV_ID4:       { addr: 0x00DC , type: uint8,  perm: RW, desc: Extended Device ID }
+    - XDEV_ID3:       { addr: 0x00DD , type: uint8,  perm: RW, desc: Extended Device ID }
+    - XDEV_ID2:       { addr: 0x00DE , type: uint8,  perm: RW, desc: Extended Device ID }
+    - XDEV_ID1:       { addr: 0x00DF , type: uint8,  perm: RW, desc: Extended Device ID }
+    - XDEV_ID0:       { addr: 0x00E0 , type: uint8,  perm: RW, desc: Extended Device ID (LSByte) }
+    - GPIO0_FS:       { addr: 0x00F0 , type: uint8,  perm: RW, desc: GPIO0 pin Function Selector }
+    - GPIO1_FS:       { addr: 0x00F1 , type: uint8,  perm: RW, desc: GPIO1 pin Function Selector }
+    - GPIO2_FS:       { addr: 0x00F2 , type: uint8,  perm: RW, desc: GPIO2 pin Function Selector }
+    - GPIO3_FS:       { addr: 0x00F3 , type: uint8,  perm: RW, desc: GPIO3 pin Function Selector }
+    - GPIO4_FS:       { addr: 0x00F4 , type: uint8,  perm: RW, desc: GPIO4 pin Function Selector }
+    - GPIO5_FS:       { addr: 0x00F5 , type: uint8,  perm: RW, desc: GPIO5 pin Function Selector }
+    - GPIO6_FS:       { addr: 0x00F6 , type: uint8,  perm: RW, desc: GPIO6 (INT pin) pin Function Selector }
+    - VRECT_ADC:      { addr: 0x0150 , type: uint16, perm: RW, desc: VRECT voltage ADC reading (in mV) }
+    - VOUT_ADC:       { addr: 0x0152 , type: uint16, perm: RW, desc: VOUT voltage ADC reading (in mV) }
+    - IRECT_ADC:      { addr: 0x0154 , type: uint16, perm: RW, desc: IRECT current ADC reading (in mA) }
+    - TRECT_ADC:      { addr: 0x0158 , type: uint16, perm: RW, desc: Rectifier Temperature sensor ADC reading (in °C) }
+    - TLR_ADC:        { addr: 0x015A , type: uint16, perm: RW, desc: Main Linear Regulator Temperature sensor ADC reading (in °C) }
+    - VNTC_ADC:       { addr: 0x015E , type: uint16, perm: RW, desc: External NTC pin Voltage ADC reading (in mV) }
+
+###########################################################################################################
+#                                   Fields                                                                #
+###########################################################################################################
+
+fields:
+    - INT_EN:       #create flags and fields in the register
+      - OTP_Int_En:             {bit: 0, desc: OTP Int En }
+      - OCP_Int_En:             {bit: 1, desc: OCP Int En }
+      - OVP_Int_En:             {bit: 2, desc: OVP Int En }
+      - Out_On_Int_En:          {bit: 6, desc: Out On Int En }
+      - Out_Off_Int_En:         {bit: 7, desc: Out Off Int En }
+      - Sig_Str_Int_En:         {bit: 10, desc: Sig Str Int En }
+      - Vrect_Rdy_Int_En:       {bit: 11, desc: Vrect Rdy Int En }
+    
+    - INT_CLR:      #create flags and fields in the register
+      - OTP_Int_Clr:            {bit: 0, desc: OTP Int Clr }
+      - OCP_Int_Clr:            {bit: 1, desc: OCP Int Clr }
+      - OVP_Int_Clr:            {bit: 2, desc: OVP Int Clr }
+      - Out_On_Int_Clr:         {bit: 6, desc: Out On Int Clr }
+      - Out_Off_Int_Clr:        {bit: 7, desc: Out Off Int Clr }
+      - Sig_Str_Int_Clr:        {bit: 10, desc: Sig Str Int Clr }
+      - Vrect_Rdy_Int_Clr:      {bit: 11, desc: Vrect Rdy Int Clr }
+
+    - INT_LATCH:    #create flags and fields in the register
+      - OTP_Int_Latch:          {bit: 0, desc: OTP Int Latch }
+      - OCP_Int_Latch:          {bit: 1, desc: OCP Int Latch }
+      - OVP_Int_Latch:          {bit: 2, desc: OVP Int Latch }
+      - Out_On_Int_Latch:       {bit: 6, desc: Out On Int Latch }
+      - Out_Off_Int_Latch:      {bit: 7, desc: Out Off Int Latch }
+      - Sig_Str_Int_Latch:      {bit: 10, desc: Sig Str Int Latch }
+      - Vrect_Rdy_Int_Latch:    {bit: 11, desc: Vrect Rdy Int Latch }
+
+    - INT_STA:      #create flags and fields in the register
+      - OTP_Int_Sta:            {bit: 0, desc: OTP Int Sta }
+      - OCP_Int_Sta:            {bit: 1, desc: OCP Int Sta }
+      - OVP_Int_Sta:            {bit: 2, desc: OVP Int Sta }
+      - Out_On_Int_Sta:         {bit: 6, desc: Out On Int Sta }
+      - Out_Off_Int_Sta:        {bit: 7, desc: Out Off Int Sta }
+      - Sig_Str_Int_Sta:        {bit: 10, desc: Sig Str Int Sta }
+      - Vrect_Rdy_Int_Sta:      {bit: 11, desc: Vrect Rdy Int Sta }
+      
+    - OTP_LATCH:    #create flags and fields in the register
+      - Lin_Reg_OTP_Latch:      {bit: 0, desc: Lin Reg OTP Latch }
+      - Rect_OTP_Latch:         {bit: 1, desc: Rect OTP Latch }
+
+    - OVP_LATCH:    #create flags and fields in the register
+      - Adj_OVPS_Latch:         {bit: 0, desc: Adj OVPS Latch }
+      - Fxd_OVPS_Latch:         {bit: 1, desc: Fxd OVPS Latch }
+
+    - OCP_LATCH:    #create flags and fields in the register
+      - OCP_Latch:              {bit: 0, desc: OCP Latch }
+
+    - SYS_ERR0:     #create flags and fields in the register
+      - M0_Hard_Fault_Err:      {bit: 0, desc: M0 Hard Fault Err }
+      - Header_Section_Err:     {bit: 1, desc: Header Section Err }
+      - ECC_Double_Bit_Err:     {bit: 2, desc: ECC Double Bit Error }
+
+    - SYS_ERR1:     #create flags and fields in the register
+      - Trimming_Sector_Error:       {mask: 0x03, desc: Trimming Sector Error } 
+      - Configuration_Sector_Error:  {mask: 0x0C, desc: Configuration Sector Error } 
+      - Patch_Sector_Error:          {mask: 0x30, desc: Patch Sector Error } 
+      - Chip_Info_Sector_Error:      {mask: 0xC0, desc: Chip Info Sector Error } 
+
+    - SYS_ERR2:     #create flags and fields in the register
+      - OTP_Memory_Trimming_Sector_Error:   {mask: 0x03, desc: OTP Memory Trimming Sector Error } 
+
+    - DIR_CMD:      #create flags and fields in the register
+      - Send_Msg:               {bit: 0, desc: Send Msg }
+      - Send_EPT:               {bit: 2, desc: Send EPT }
+      - Out_On:                 {bit: 8, desc: Out On }
+      - Out_Off:                {bit: 9, desc: Out Off }
+
+    - LCR_HYST:     #create flags and fields in the register
+      - LCR_To_NCR_Hysteresis:  {mask: 0x3F, desc: Low-Current Range (LCR) to Normal-Current Range (NCR) hysteresis (4 mA/step) }
+
+    - MOD_CFG:      #create flags and fields in the register
+      - NCR_Comm_Mod_En:        {bit: 0, desc: NCR Comm Mod En }
+      - NCR_Clamp_Mod_En:       {bit: 1, desc: NCR Clamp Mod En }
+      - LCR_Comm_Mod_En:        {bit: 4, desc: LCR Comm Mod En }
+      - LCR_Clamp_Mod_En:       {bit: 5, desc: LCR Clamp Mod En }
+
+    - IDMYL_SET:    #create flags and fields in the register
+      - Dummy_Load_Current:     {mask: 0x1F, desc: Dummy Load current 0 mA to 310 mA (10 mA/step) }
+
+    - VRECT_MIN:    #create flags and fields in the register
+      - Minimum_VRECT_voltage:  {mask: 0x0F, desc: Minimum VRECT voltage (3.5V to 11V, 0,5 V/step) for constant VOUT }
+      - VRECT_Min_Ctrl_En:      {mask: 0x80, desc: VRECT Min Ctrl En }
+
+    - PMAX_PTC:     #create flags and fields in the register
+      - Max_Power:              {mask: 0x1F, desc: Maximum power capability established during Power Transfer Contract }
+
+    - PROT_EN0:      #create flags and fields in the register
+      - Trect_OTP_En:           {bit: 0, desc: Trect_OTP_En }
+      - Tlr_OTP_En:             {bit: 1, desc: Tlr_OTP_En }
+      - Vntc_OTP_En:            {bit: 2, desc: Vntc_OTP_En }
+      - Tshdn_OTP_En:           {bit: 3, desc: Tshdn_OTP_En }
+
+    - PROT_EN1:      #create flags and fields in the register
+      - Adj_OVPS_En:           {bit: 0, desc: Adj_OVPS_ En }
+      - Fxd_OVPS_En:            {bit: 1, desc: Fxd_OVPS_En }
+
+    - PROT_EN2:      #create flags and fields in the register
+      - Irect_OCP_En:           {bit: 0, desc: Irect_OCP_en }
+
+    - PROT_EPT0:     #create flags and fields in the register
+      - Trect_OTP_EPT_Req:      {bit: 0, desc: Trect_OTP_EPT_Req }
+      - Tlr_OTP_EPT_Req:        {bit: 1, desc: Tlr_OTP_EPT_Req }
+      - Vntc_OTP_EPT_Req:       {bit: 2, desc: Vntc_OTP_EPT_Req }
+
+    - PROT_EPT1:     #create flags and fields in the register
+      - Adj_OVPS_EPT_Req:      {bit: 0, desc: Adj_OVPS_EPT_Req }
+      - Fxd_OVPS_EPT_Req:       {bit: 1, desc: Fxd_OVPS_EPT_Req }
+
+    - PROT_EPT2:     #create flags and fields in the register
+      - Irect_OCP_EPT_Req:      {bit: 0, desc: Irect_OCP_EPT_Req }
+
+    - PROT_OD0:      #create flags and fields in the register
+      - Trect_OTP_Out_Disc:     {bit: 0, desc: Trect_OTP_ Out_Disc }
+      - Tlr_OTP_Out_Disc:       {bit: 1, desc: Tlr_OTP_Out_Disc }
+      - Vntc_OTP_Out_Disc:       {bit: 2, desc: Vntc_OTP_Out_Disc }
+
+    - PROT_OD1:      #create flags and fields in the register
+      - Vrect_OVP_Out_Disc:      {bit: 0, desc: Vrect_OVP_Out_Disc }
+
+    - PROT_OD2:      #create flags and fields in the register
+      - Irect_OCP_Out_Disc:      {bit: 0, desc: Irect_OCP_Out_Disc }
+
+
+
+###########################################################################################################
+#                                   Preset Configs                                                        #
+###########################################################################################################
+#configs:
+    
+
+
+
