@@ -140,7 +140,12 @@ mrt_status_t stw_test(stwlc68_t* dev)
 {
     mrt_status_t status = MRT_STATUS_ERROR;
     /*user-block-test-start*/
-
+    uint16_t chipID;
+    chipID = stw_get_chip_id(dev);
+    if (chipID == 0x0044)
+    {
+    	status = MRT_STATUS_OK;
+    }
     /*user-block-test-end*/
     return status;
 }

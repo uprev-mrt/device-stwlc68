@@ -115,6 +115,36 @@
   Fields                                                                              
 *******************************************************************************/
 
+/* CHIP_ID Register Fields */
+    /* CHIP_ID -> CHIP_ID */
+    #define STW_CHIP_ID_CHIP_ID_FIELD_MASK                         0xFFFF /* Chip Identifier */
+    #define STW_CHIP_ID_CHIP_ID_FIELD_OFFSET                       0x0000
+
+/* CHIP_REV Register Fields */
+    /* CHIP_REV -> CHIP_REV */
+    #define STW_CHIP_REV_CHIP_REV_FIELD_MASK                       0xFF /* Chip Revision */
+    #define STW_CHIP_REV_CHIP_REV_FIELD_OFFSET                     0x00
+
+/* ROM_ID Register Fields */
+    /* ROM_ID -> ROM_ID */
+    #define STW_ROM_ID_ROM_ID_FIELD_MASK                           0xFFFF /* ROM Identifier */
+    #define STW_ROM_ID_ROM_ID_FIELD_OFFSET                         0x0000
+
+/* CFG_ID Register Fields */
+    /* CFG_ID -> CFG_ID */
+    #define STW_CFG_ID_CFG_ID_FIELD_MASK                           0xFFFF /* OTP memory configuration ID */
+    #define STW_CFG_ID_CFG_ID_FIELD_OFFSET                         0x0000
+
+/* TRIM_ID Register Fields */
+    /* TRIM_ID -> TRIM_ID */
+    #define STW_TRIM_ID_TRIM_ID_FIELD_MASK                         0xFFFF /* Production trimming version ID */
+    #define STW_TRIM_ID_TRIM_ID_FIELD_OFFSET                       0x0000
+
+/* PATCH_ID Register Fields */
+    /* PATCH_ID -> PATCH_ID */
+    #define STW_PATCH_ID_PATCH_ID_FIELD_MASK                       0xFFFF /* OTP patch version ID */
+    #define STW_PATCH_ID_PATCH_ID_FIELD_OFFSET                     0x0000
+
 /* INT_EN Register Fields */
     /* INT_EN -> Flags */
     #define STW_INT_EN_OTP_INT_EN                                  0x0001 /* OTP Int En */
@@ -201,6 +231,26 @@
     #define STW_DIR_CMD_OUT_ON                                     0x0100 /* Out On */
     #define STW_DIR_CMD_OUT_OFF                                    0x0200 /* Out Off */
 
+/* AC_FREQ Register Fields */
+    /* AC_FREQ -> AC_FREQ */
+    #define STW_AC_FREQ_AC_FREQ_FIELD_MASK                         0xFFFF /* Rectifier Operating Frequency (in kHz) */
+    #define STW_AC_FREQ_AC_FREQ_FIELD_OFFSET                       0x0000
+
+/* S_STR_TX Register Fields */
+    /* S_STR_TX -> S_STR_TX */
+    #define STW_S_STR_TX_S_STR_TX_FIELD_MASK                       0xFF /* Signal Strength Level sent to transmitter */
+    #define STW_S_STR_TX_S_STR_TX_FIELD_OFFSET                     0x00
+
+/* VOUT_SET Register Fields */
+    /* VOUT_SET -> VOUT_SET */
+    #define STW_VOUT_SET_VOUT_SET_FIELD_MASK                       0xFFFF /* Output Voltage setting 25 mV to 22 V (25 mV/step) */
+    #define STW_VOUT_SET_VOUT_SET_FIELD_OFFSET                     0x0000
+
+/* VTH_AOE Register Fields */
+    /* VTH_AOE -> VTH_AOE */
+    #define STW_VTH_AOE_VTH_AOE_FIELD_MASK                         0xFF /* Voltage threshold for Automatic Output Enable 240 mV to 1049 mV (16 mV/step) */
+    #define STW_VTH_AOE_VTH_AOE_FIELD_OFFSET                       0x00
+
 /* LCR_HYST Register Fields */
     /* LCR_HYST -> LCR_To_NCR_Hysteresis */
     #define STW_LCR_HYST_LCR_TO_NCR_HYSTERESIS_FIELD_MASK          0x3F /* Low-Current Range (LCR) to Normal-Current Range (NCR) hysteresis (4 mA/step) */
@@ -225,10 +275,155 @@
     #define STW_VRECT_MIN_MINIMUM_VRECT_VOLTAGE_FIELD_MASK         0x0F /* Minimum VRECT voltage (3.5V to 11V */
     #define STW_VRECT_MIN_MINIMUM_VRECT_VOLTAGE_FIELD_OFFSET       0x00
 
+/* VDROP_V0 Register Fields */
+    /* VDROP_V0 -> VDROP_V0 */
+    #define STW_VDROP_V0_VDROP_V0_FIELD_MASK                       0xFF /* Linear regulator target drop-out voltage setpoint 0 */
+    #define STW_VDROP_V0_VDROP_V0_FIELD_OFFSET                     0x00
+
+/* VDROP_V1 Register Fields */
+    /* VDROP_V1 -> VDROP_V1 */
+    #define STW_VDROP_V1_VDROP_V1_FIELD_MASK                       0xFF /* Linear regulator target drop-out voltage setpoint 1 */
+    #define STW_VDROP_V1_VDROP_V1_FIELD_OFFSET                     0x00
+
+/* VDROP_V2 Register Fields */
+    /* VDROP_V2 -> VDROP_V2 */
+    #define STW_VDROP_V2_VDROP_V2_FIELD_MASK                       0xFF /* Linear regulator target drop-out voltage setpoint 2 */
+    #define STW_VDROP_V2_VDROP_V2_FIELD_OFFSET                     0x00
+
+/* VDROP_V3 Register Fields */
+    /* VDROP_V3 -> VDROP_V3 */
+    #define STW_VDROP_V3_VDROP_V3_FIELD_MASK                       0xFF /* Linear regulator target drop-out voltage setpoint 3 */
+    #define STW_VDROP_V3_VDROP_V3_FIELD_OFFSET                     0x00
+
+/* VDROP_C1 Register Fields */
+    /* VDROP_C1 -> VDROP_C1 */
+    #define STW_VDROP_C1_VDROP_C1_FIELD_MASK                       0xFF /* Linear regulator target drop-out voltage current threshold 1 */
+    #define STW_VDROP_C1_VDROP_C1_FIELD_OFFSET                     0x00
+
+/* VDROP_C2 Register Fields */
+    /* VDROP_C2 -> VDROP_C2 */
+    #define STW_VDROP_C2_VDROP_C2_FIELD_MASK                       0xFF /* Linear regulator target drop-out voltage current threshold 2 */
+    #define STW_VDROP_C2_VDROP_C2_FIELD_OFFSET                     0x00
+
+/* VDROP_C3 Register Fields */
+    /* VDROP_C3 -> VDROP_C3 */
+    #define STW_VDROP_C3_VDROP_C3_FIELD_MASK                       0xFF /* Linear regulator target drop-out voltage current threshold 3 */
+    #define STW_VDROP_C3_VDROP_C3_FIELD_OFFSET                     0x00
+
+/* MSG_TX0 Register Fields */
+    /* MSG_TX0 -> MSG_TX0 */
+    #define STW_MSG_TX0_MSG_TX0_FIELD_MASK                         0xFF /* Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) */
+    #define STW_MSG_TX0_MSG_TX0_FIELD_OFFSET                       0x00
+
+/* MSG_TX1 Register Fields */
+    /* MSG_TX1 -> MSG_TX1 */
+    #define STW_MSG_TX1_MSG_TX1_FIELD_MASK                         0xFF /* Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) */
+    #define STW_MSG_TX1_MSG_TX1_FIELD_OFFSET                       0x00
+
+/* MSG_TX2 Register Fields */
+    /* MSG_TX2 -> MSG_TX2 */
+    #define STW_MSG_TX2_MSG_TX2_FIELD_MASK                         0xFF /* Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) */
+    #define STW_MSG_TX2_MSG_TX2_FIELD_OFFSET                       0x00
+
+/* MSG_TX3 Register Fields */
+    /* MSG_TX3 -> MSG_TX3 */
+    #define STW_MSG_TX3_MSG_TX3_FIELD_MASK                         0xFF /* Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) */
+    #define STW_MSG_TX3_MSG_TX3_FIELD_OFFSET                       0x00
+
+/* MSG_TX4 Register Fields */
+    /* MSG_TX4 -> MSG_TX4 */
+    #define STW_MSG_TX4_MSG_TX4_FIELD_MASK                         0xFF /* Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) */
+    #define STW_MSG_TX4_MSG_TX4_FIELD_OFFSET                       0x00
+
+/* MSG_TX5 Register Fields */
+    /* MSG_TX5 -> MSG_TX5 */
+    #define STW_MSG_TX5_MSG_TX5_FIELD_MASK                         0xFF /* Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) */
+    #define STW_MSG_TX5_MSG_TX5_FIELD_OFFSET                       0x00
+
+/* MSG_TX6 Register Fields */
+    /* MSG_TX6 -> MSG_TX6 */
+    #define STW_MSG_TX6_MSG_TX6_FIELD_MASK                         0xFF /* Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) */
+    #define STW_MSG_TX6_MSG_TX6_FIELD_OFFSET                       0x00
+
+/* MSG_TX7 Register Fields */
+    /* MSG_TX7 -> MSG_TX7 */
+    #define STW_MSG_TX7_MSG_TX7_FIELD_MASK                         0xFF /* Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) */
+    #define STW_MSG_TX7_MSG_TX7_FIELD_OFFSET                       0x00
+
+/* MSG_TX8 Register Fields */
+    /* MSG_TX8 -> MSG_TX8 */
+    #define STW_MSG_TX8_MSG_TX8_FIELD_MASK                         0xFF /* Message packet content to be sent to transmitter via ASK modulation (see DIR_CMG register) */
+    #define STW_MSG_TX8_MSG_TX8_FIELD_OFFSET                       0x00
+
+/* EPT_MSG Register Fields */
+    /* EPT_MSG -> EPT_MSG */
+    #define STW_EPT_MSG_EPT_MSG_FIELD_MASK                         0xFF /* EPT Message (root cause event) added to EPT packet (see DIR_CMD register) */
+    #define STW_EPT_MSG_EPT_MSG_FIELD_OFFSET                       0x00
+
+/* FOD_CTC Register Fields */
+    /* FOD_CTC -> FOD_CTC */
+    #define STW_FOD_CTC_FOD_CTC_FIELD_MASK                         0xFF /* FOD Current Threshold Calibration */
+    #define STW_FOD_CTC_FOD_CTC_FIELD_OFFSET                       0x00
+
+/* FOD_GSC Register Fields */
+    /* FOD_GSC -> FOD_GSC */
+    #define STW_FOD_GSC_FOD_GSC_FIELD_MASK                         0xFF /* FOD Gain Scaler Calibration */
+    #define STW_FOD_GSC_FOD_GSC_FIELD_OFFSET                       0x00
+
+/* FOD_OLC Register Fields */
+    /* FOD_OLC -> FOD_OLC */
+    #define STW_FOD_OLC_FOD_OLC_FIELD_MASK                         0xFF /* FOD Offset Level Calibration */
+    #define STW_FOD_OLC_FOD_OLC_FIELD_OFFSET                       0x00
+
+/* FOD_DCR Register Fields */
+    /* FOD_DCR -> FOD_DCR */
+    #define STW_FOD_DCR_FOD_DCR_FIELD_MASK                         0xFF /* Coil DC-Resistance for FOD calculation */
+    #define STW_FOD_DCR_FOD_DCR_FIELD_OFFSET                       0x00
+
+/* VRECT_RE Register Fields */
+    /* VRECT_RE -> VRECT_RE */
+    #define STW_VRECT_RE_VRECT_RE_FIELD_MASK                       0xFFFF /* Voltage Regulation Error (difference in mV) between actual and target VRECT used to calculate CEP for 0x0091 the transmitter */
+    #define STW_VRECT_RE_VRECT_RE_FIELD_OFFSET                     0x0000
+
+/* RPP_TX Register Fields */
+    /* RPP_TX -> RPP_TX */
+    #define STW_RPP_TX_RPP_TX_FIELD_MASK                           0xFFFF /* Received Power (comprehensive of losses) level Packet sent to transmitter */
+    #define STW_RPP_TX_RPP_TX_FIELD_OFFSET                         0x0000
+
+/* SS_MIN_TX Register Fields */
+    /* SS_MIN_TX -> SS_MIN_TX */
+    #define STW_SS_MIN_TX_SS_MIN_TX_FIELD_MASK                     0xFF /* Minimum Signal-Strength level for proceeding to PING phase */
+    #define STW_SS_MIN_TX_SS_MIN_TX_FIELD_OFFSET                   0x00
+
+/* CS_OFFS Register Fields */
+    /* CS_OFFS -> CS_OFFS */
+    #define STW_CS_OFFS_CS_OFFS_FIELD_MASK                         0xFF /* Current sensor offset adjustment (in mA) */
+    #define STW_CS_OFFS_CS_OFFS_FIELD_OFFSET                       0x00
+
+/* IDLE_CC Register Fields */
+    /* IDLE_CC -> IDLE_CC */
+    #define STW_IDLE_CC_IDLE_CC_FIELD_MASK                         0xFF /* Chip idle current consumption (in mA) */
+    #define STW_IDLE_CC_IDLE_CC_FIELD_OFFSET                       0x00
+
 /* PMAX_PTC Register Fields */
     /* PMAX_PTC -> Max_Power */
     #define STW_PMAX_PTC_MAX_POWER_FIELD_MASK                      0x1F /* Maximum power capability established during Power Transfer Contract */
     #define STW_PMAX_PTC_MAX_POWER_FIELD_OFFSET                    0x00
+
+/* TRECT_OTP Register Fields */
+    /* TRECT_OTP -> TRECT_OTP */
+    #define STW_TRECT_OTP_TRECT_OTP_FIELD_MASK                     0xFFFF /* Over-Temperature detection Threshold related to Rectifier Temperature sensor */
+    #define STW_TRECT_OTP_TRECT_OTP_FIELD_OFFSET                   0x0000
+
+/* TLR_OTP Register Fields */
+    /* TLR_OTP -> TLR_OTP */
+    #define STW_TLR_OTP_TLR_OTP_FIELD_MASK                         0xFFFF /* Over-Temperature detection Threshold related to main Linear Regulator Temperature sensor */
+    #define STW_TLR_OTP_TLR_OTP_FIELD_OFFSET                       0x0000
+
+/* VNTC_OTP Register Fields */
+    /* VNTC_OTP -> VNTC_OTP */
+    #define STW_VNTC_OTP_VNTC_OTP_FIELD_MASK                       0xFFFF /* Over-Temperature detection Threshold related to external NTC pin */
+    #define STW_VNTC_OTP_VNTC_OTP_FIELD_OFFSET                     0x0000
 
 /* PROT_EN0 Register Fields */
     /* PROT_EN0 -> Flags */
@@ -275,6 +470,41 @@
     /* PROT_OD2 -> Flags */
     #define STW_PROT_OD2_IRECT_OCP_OUT_DISC                        0x01 /* Irect_OCP_Out_Disc */
 
+/* GPIO6_FS Register Fields */
+    /* GPIO6_FS -> GPIO6_FS */
+    #define STW_GPIO6_FS_GPIO6_FS_FIELD_MASK                       0xFF /* GPIO6 (INT pin) pin Function Selector */
+    #define STW_GPIO6_FS_GPIO6_FS_FIELD_OFFSET                     0x00
+
+/* VRECT_ADC Register Fields */
+    /* VRECT_ADC -> VRECT_ADC */
+    #define STW_VRECT_ADC_VRECT_ADC_FIELD_MASK                     0xFFFF /* VRECT voltage ADC reading (in mV) */
+    #define STW_VRECT_ADC_VRECT_ADC_FIELD_OFFSET                   0x0000
+
+/* VOUT_ADC Register Fields */
+    /* VOUT_ADC -> VOUT_ADC */
+    #define STW_VOUT_ADC_VOUT_ADC_FIELD_MASK                       0xFFFF /* VOUT voltage ADC reading (in mV) */
+    #define STW_VOUT_ADC_VOUT_ADC_FIELD_OFFSET                     0x0000
+
+/* IRECT_ADC Register Fields */
+    /* IRECT_ADC -> IRECT_ADC */
+    #define STW_IRECT_ADC_IRECT_ADC_FIELD_MASK                     0xFFFF /* IRECT current ADC reading (in mA) */
+    #define STW_IRECT_ADC_IRECT_ADC_FIELD_OFFSET                   0x0000
+
+/* TRECT_ADC Register Fields */
+    /* TRECT_ADC -> TRECT_ADC */
+    #define STW_TRECT_ADC_TRECT_ADC_FIELD_MASK                     0xFFFF /* Rectifier Temperature sensor ADC reading (in °C) */
+    #define STW_TRECT_ADC_TRECT_ADC_FIELD_OFFSET                   0x0000
+
+/* TLR_ADC Register Fields */
+    /* TLR_ADC -> TLR_ADC */
+    #define STW_TLR_ADC_TLR_ADC_FIELD_MASK                         0xFFFF /* Main Linear Regulator Temperature sensor ADC reading (in °C) */
+    #define STW_TLR_ADC_TLR_ADC_FIELD_OFFSET                       0x0000
+
+/* VNTC_ADC Register Fields */
+    /* VNTC_ADC -> VNTC_ADC */
+    #define STW_VNTC_ADC_VNTC_ADC_FIELD_MASK                       0xFFFF /* External NTC pin Voltage ADC reading (in mV) */
+    #define STW_VNTC_ADC_VNTC_ADC_FIELD_OFFSET                     0x0000
+
 
 /*******************************************************************************
   Default Values                                                                              
@@ -316,6 +546,36 @@
 *******************************************************************************/
 
 /**
+ * @brief reads the CHIP_ID field from the CHIP_ID register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_chip_id(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mChipId, STW_CHIP_ID_CHIP_ID_FIELD_MASK )
+/**
+ * @brief reads the CHIP_REV field from the CHIP_REV register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_chip_rev(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mChipRev, STW_CHIP_REV_CHIP_REV_FIELD_MASK )
+/**
+ * @brief reads the ROM_ID field from the ROM_ID register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_rom_id(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mRomId, STW_ROM_ID_ROM_ID_FIELD_MASK )
+/**
+ * @brief reads the CFG_ID field from the CFG_ID register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_cfg_id(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mCfgId, STW_CFG_ID_CFG_ID_FIELD_MASK )
+/**
+ * @brief reads the TRIM_ID field from the TRIM_ID register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_trim_id(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mTrimId, STW_TRIM_ID_TRIM_ID_FIELD_MASK )
+/**
+ * @brief reads the PATCH_ID field from the PATCH_ID register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_patch_id(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mPatchId, STW_PATCH_ID_PATCH_ID_FIELD_MASK )
+/**
  * @brief reads the Trimming_Sector_Error field from the SYS_ERR1 register 
  * @param dev ptr to stwlc68 device
  */
@@ -341,6 +601,26 @@
  */
 #define stw_get_sys_err2_otp_memory_trimming_sector_error(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mSysErr2, STW_SYS_ERR2_OTP_MEMORY_TRIMMING_SECTOR_ERROR_FIELD_MASK )
 /**
+ * @brief reads the AC_FREQ field from the AC_FREQ register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_ac_freq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAcFreq, STW_AC_FREQ_AC_FREQ_FIELD_MASK )
+/**
+ * @brief reads the S_STR_TX field from the S_STR_TX register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_s_str_tx(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mSStrTx, STW_S_STR_TX_S_STR_TX_FIELD_MASK )
+/**
+ * @brief reads the VOUT_SET field from the VOUT_SET register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_vout_set(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mVoutSet, STW_VOUT_SET_VOUT_SET_FIELD_MASK )
+/**
+ * @brief reads the VTH_AOE field from the VTH_AOE register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_vth_aoe(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mVthAoe, STW_VTH_AOE_VTH_AOE_FIELD_MASK )
+/**
  * @brief reads the LCR_To_NCR_Hysteresis field from the LCR_HYST register 
  * @param dev ptr to stwlc68 device
  */
@@ -356,16 +636,216 @@
  */
 #define stw_get_vrect_min_minimum_vrect_voltage(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mVrectMin, STW_VRECT_MIN_MINIMUM_VRECT_VOLTAGE_FIELD_MASK )
 /**
+ * @brief reads the VDROP_V0 field from the VDROP_V0 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_vdrop_v0(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mVdropV0, STW_VDROP_V0_VDROP_V0_FIELD_MASK )
+/**
+ * @brief reads the VDROP_V1 field from the VDROP_V1 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_vdrop_v1(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mVdropV1, STW_VDROP_V1_VDROP_V1_FIELD_MASK )
+/**
+ * @brief reads the VDROP_V2 field from the VDROP_V2 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_vdrop_v2(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mVdropV2, STW_VDROP_V2_VDROP_V2_FIELD_MASK )
+/**
+ * @brief reads the VDROP_V3 field from the VDROP_V3 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_vdrop_v3(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mVdropV3, STW_VDROP_V3_VDROP_V3_FIELD_MASK )
+/**
+ * @brief reads the VDROP_C1 field from the VDROP_C1 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_vdrop_c1(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mVdropC1, STW_VDROP_C1_VDROP_C1_FIELD_MASK )
+/**
+ * @brief reads the VDROP_C2 field from the VDROP_C2 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_vdrop_c2(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mVdropC2, STW_VDROP_C2_VDROP_C2_FIELD_MASK )
+/**
+ * @brief reads the VDROP_C3 field from the VDROP_C3 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_vdrop_c3(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mVdropC3, STW_VDROP_C3_VDROP_C3_FIELD_MASK )
+/**
+ * @brief reads the MSG_TX0 field from the MSG_TX0 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_msg_tx0(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mMsgTx0, STW_MSG_TX0_MSG_TX0_FIELD_MASK )
+/**
+ * @brief reads the MSG_TX1 field from the MSG_TX1 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_msg_tx1(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mMsgTx1, STW_MSG_TX1_MSG_TX1_FIELD_MASK )
+/**
+ * @brief reads the MSG_TX2 field from the MSG_TX2 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_msg_tx2(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mMsgTx2, STW_MSG_TX2_MSG_TX2_FIELD_MASK )
+/**
+ * @brief reads the MSG_TX3 field from the MSG_TX3 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_msg_tx3(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mMsgTx3, STW_MSG_TX3_MSG_TX3_FIELD_MASK )
+/**
+ * @brief reads the MSG_TX4 field from the MSG_TX4 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_msg_tx4(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mMsgTx4, STW_MSG_TX4_MSG_TX4_FIELD_MASK )
+/**
+ * @brief reads the MSG_TX5 field from the MSG_TX5 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_msg_tx5(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mMsgTx5, STW_MSG_TX5_MSG_TX5_FIELD_MASK )
+/**
+ * @brief reads the MSG_TX6 field from the MSG_TX6 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_msg_tx6(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mMsgTx6, STW_MSG_TX6_MSG_TX6_FIELD_MASK )
+/**
+ * @brief reads the MSG_TX7 field from the MSG_TX7 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_msg_tx7(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mMsgTx7, STW_MSG_TX7_MSG_TX7_FIELD_MASK )
+/**
+ * @brief reads the MSG_TX8 field from the MSG_TX8 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_msg_tx8(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mMsgTx8, STW_MSG_TX8_MSG_TX8_FIELD_MASK )
+/**
+ * @brief reads the EPT_MSG field from the EPT_MSG register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_ept_msg(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mEptMsg, STW_EPT_MSG_EPT_MSG_FIELD_MASK )
+/**
+ * @brief reads the FOD_CTC field from the FOD_CTC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_fod_ctc(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mFodCtc, STW_FOD_CTC_FOD_CTC_FIELD_MASK )
+/**
+ * @brief reads the FOD_GSC field from the FOD_GSC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_fod_gsc(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mFodGsc, STW_FOD_GSC_FOD_GSC_FIELD_MASK )
+/**
+ * @brief reads the FOD_OLC field from the FOD_OLC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_fod_olc(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mFodOlc, STW_FOD_OLC_FOD_OLC_FIELD_MASK )
+/**
+ * @brief reads the FOD_DCR field from the FOD_DCR register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_fod_dcr(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mFodDcr, STW_FOD_DCR_FOD_DCR_FIELD_MASK )
+/**
+ * @brief reads the VRECT_RE field from the VRECT_RE register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_vrect_re(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mVrectRe, STW_VRECT_RE_VRECT_RE_FIELD_MASK )
+/**
+ * @brief reads the RPP_TX field from the RPP_TX register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_rpp_tx(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mRppTx, STW_RPP_TX_RPP_TX_FIELD_MASK )
+/**
+ * @brief reads the SS_MIN_TX field from the SS_MIN_TX register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_ss_min_tx(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mSsMinTx, STW_SS_MIN_TX_SS_MIN_TX_FIELD_MASK )
+/**
+ * @brief reads the CS_OFFS field from the CS_OFFS register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_cs_offs(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mCsOffs, STW_CS_OFFS_CS_OFFS_FIELD_MASK )
+/**
+ * @brief reads the IDLE_CC field from the IDLE_CC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_idle_cc(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mIdleCc, STW_IDLE_CC_IDLE_CC_FIELD_MASK )
+/**
  * @brief reads the Max_Power field from the PMAX_PTC register 
  * @param dev ptr to stwlc68 device
  */
 #define stw_get_pmax_ptc_max_power(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mPmaxPtc, STW_PMAX_PTC_MAX_POWER_FIELD_MASK )
+/**
+ * @brief reads the TRECT_OTP field from the TRECT_OTP register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_trect_otp(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mTrectOtp, STW_TRECT_OTP_TRECT_OTP_FIELD_MASK )
+/**
+ * @brief reads the TLR_OTP field from the TLR_OTP register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_tlr_otp(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mTlrOtp, STW_TLR_OTP_TLR_OTP_FIELD_MASK )
+/**
+ * @brief reads the VNTC_OTP field from the VNTC_OTP register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_vntc_otp(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mVntcOtp, STW_VNTC_OTP_VNTC_OTP_FIELD_MASK )
+/**
+ * @brief reads the GPIO6_FS field from the GPIO6_FS register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_gpio6_fs(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio6Fs, STW_GPIO6_FS_GPIO6_FS_FIELD_MASK )
+/**
+ * @brief reads the VRECT_ADC field from the VRECT_ADC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_vrect_adc(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mVrectAdc, STW_VRECT_ADC_VRECT_ADC_FIELD_MASK )
+/**
+ * @brief reads the VOUT_ADC field from the VOUT_ADC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_vout_adc(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mVoutAdc, STW_VOUT_ADC_VOUT_ADC_FIELD_MASK )
+/**
+ * @brief reads the IRECT_ADC field from the IRECT_ADC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_irect_adc(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mIrectAdc, STW_IRECT_ADC_IRECT_ADC_FIELD_MASK )
+/**
+ * @brief reads the TRECT_ADC field from the TRECT_ADC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_trect_adc(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mTrectAdc, STW_TRECT_ADC_TRECT_ADC_FIELD_MASK )
+/**
+ * @brief reads the TLR_ADC field from the TLR_ADC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_tlr_adc(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mTlrAdc, STW_TLR_ADC_TLR_ADC_FIELD_MASK )
+/**
+ * @brief reads the VNTC_ADC field from the VNTC_ADC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_get_vntc_adc(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mVntcAdc, STW_VNTC_ADC_VNTC_ADC_FIELD_MASK )
 
 
 /*******************************************************************************
   Field Setters                                                                              
 *******************************************************************************/
 
+/**
+ * @brief writes the AC_FREQ field to the AC_FREQ register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_ac_freq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAcFreq, STW_AC_FREQ_AC_FREQ_FIELD_MASK , (val) )
+/**
+ * @brief writes the S_STR_TX field to the S_STR_TX register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_s_str_tx(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mSStrTx, STW_S_STR_TX_S_STR_TX_FIELD_MASK , (val) )
+/**
+ * @brief writes the VOUT_SET field to the VOUT_SET register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_vout_set(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mVoutSet, STW_VOUT_SET_VOUT_SET_FIELD_MASK , (val) )
+/**
+ * @brief writes the VTH_AOE field to the VTH_AOE register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_vth_aoe(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mVthAoe, STW_VTH_AOE_VTH_AOE_FIELD_MASK , (val) )
 /**
  * @brief writes the LCR_To_NCR_Hysteresis field to the LCR_HYST register 
  * @param dev ptr to stwlc68 device
@@ -382,10 +862,190 @@
  */
 #define stw_set_vrect_min_minimum_vrect_voltage(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mVrectMin, STW_VRECT_MIN_MINIMUM_VRECT_VOLTAGE_FIELD_MASK , (val) )
 /**
+ * @brief writes the VDROP_V0 field to the VDROP_V0 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_vdrop_v0(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mVdropV0, STW_VDROP_V0_VDROP_V0_FIELD_MASK , (val) )
+/**
+ * @brief writes the VDROP_V1 field to the VDROP_V1 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_vdrop_v1(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mVdropV1, STW_VDROP_V1_VDROP_V1_FIELD_MASK , (val) )
+/**
+ * @brief writes the VDROP_V2 field to the VDROP_V2 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_vdrop_v2(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mVdropV2, STW_VDROP_V2_VDROP_V2_FIELD_MASK , (val) )
+/**
+ * @brief writes the VDROP_V3 field to the VDROP_V3 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_vdrop_v3(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mVdropV3, STW_VDROP_V3_VDROP_V3_FIELD_MASK , (val) )
+/**
+ * @brief writes the VDROP_C1 field to the VDROP_C1 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_vdrop_c1(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mVdropC1, STW_VDROP_C1_VDROP_C1_FIELD_MASK , (val) )
+/**
+ * @brief writes the VDROP_C2 field to the VDROP_C2 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_vdrop_c2(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mVdropC2, STW_VDROP_C2_VDROP_C2_FIELD_MASK , (val) )
+/**
+ * @brief writes the VDROP_C3 field to the VDROP_C3 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_vdrop_c3(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mVdropC3, STW_VDROP_C3_VDROP_C3_FIELD_MASK , (val) )
+/**
+ * @brief writes the MSG_TX0 field to the MSG_TX0 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_msg_tx0(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mMsgTx0, STW_MSG_TX0_MSG_TX0_FIELD_MASK , (val) )
+/**
+ * @brief writes the MSG_TX1 field to the MSG_TX1 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_msg_tx1(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mMsgTx1, STW_MSG_TX1_MSG_TX1_FIELD_MASK , (val) )
+/**
+ * @brief writes the MSG_TX2 field to the MSG_TX2 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_msg_tx2(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mMsgTx2, STW_MSG_TX2_MSG_TX2_FIELD_MASK , (val) )
+/**
+ * @brief writes the MSG_TX3 field to the MSG_TX3 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_msg_tx3(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mMsgTx3, STW_MSG_TX3_MSG_TX3_FIELD_MASK , (val) )
+/**
+ * @brief writes the MSG_TX4 field to the MSG_TX4 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_msg_tx4(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mMsgTx4, STW_MSG_TX4_MSG_TX4_FIELD_MASK , (val) )
+/**
+ * @brief writes the MSG_TX5 field to the MSG_TX5 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_msg_tx5(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mMsgTx5, STW_MSG_TX5_MSG_TX5_FIELD_MASK , (val) )
+/**
+ * @brief writes the MSG_TX6 field to the MSG_TX6 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_msg_tx6(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mMsgTx6, STW_MSG_TX6_MSG_TX6_FIELD_MASK , (val) )
+/**
+ * @brief writes the MSG_TX7 field to the MSG_TX7 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_msg_tx7(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mMsgTx7, STW_MSG_TX7_MSG_TX7_FIELD_MASK , (val) )
+/**
+ * @brief writes the MSG_TX8 field to the MSG_TX8 register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_msg_tx8(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mMsgTx8, STW_MSG_TX8_MSG_TX8_FIELD_MASK , (val) )
+/**
+ * @brief writes the EPT_MSG field to the EPT_MSG register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_ept_msg(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mEptMsg, STW_EPT_MSG_EPT_MSG_FIELD_MASK , (val) )
+/**
+ * @brief writes the FOD_CTC field to the FOD_CTC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_fod_ctc(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mFodCtc, STW_FOD_CTC_FOD_CTC_FIELD_MASK , (val) )
+/**
+ * @brief writes the FOD_GSC field to the FOD_GSC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_fod_gsc(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mFodGsc, STW_FOD_GSC_FOD_GSC_FIELD_MASK , (val) )
+/**
+ * @brief writes the FOD_OLC field to the FOD_OLC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_fod_olc(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mFodOlc, STW_FOD_OLC_FOD_OLC_FIELD_MASK , (val) )
+/**
+ * @brief writes the FOD_DCR field to the FOD_DCR register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_fod_dcr(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mFodDcr, STW_FOD_DCR_FOD_DCR_FIELD_MASK , (val) )
+/**
+ * @brief writes the VRECT_RE field to the VRECT_RE register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_vrect_re(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mVrectRe, STW_VRECT_RE_VRECT_RE_FIELD_MASK , (val) )
+/**
+ * @brief writes the RPP_TX field to the RPP_TX register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_rpp_tx(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mRppTx, STW_RPP_TX_RPP_TX_FIELD_MASK , (val) )
+/**
+ * @brief writes the SS_MIN_TX field to the SS_MIN_TX register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_ss_min_tx(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mSsMinTx, STW_SS_MIN_TX_SS_MIN_TX_FIELD_MASK , (val) )
+/**
+ * @brief writes the CS_OFFS field to the CS_OFFS register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_cs_offs(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mCsOffs, STW_CS_OFFS_CS_OFFS_FIELD_MASK , (val) )
+/**
+ * @brief writes the IDLE_CC field to the IDLE_CC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_idle_cc(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mIdleCc, STW_IDLE_CC_IDLE_CC_FIELD_MASK , (val) )
+/**
  * @brief writes the Max_Power field to the PMAX_PTC register 
  * @param dev ptr to stwlc68 device
  */
 #define stw_set_pmax_ptc_max_power(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mPmaxPtc, STW_PMAX_PTC_MAX_POWER_FIELD_MASK , (val) )
+/**
+ * @brief writes the TRECT_OTP field to the TRECT_OTP register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_trect_otp(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mTrectOtp, STW_TRECT_OTP_TRECT_OTP_FIELD_MASK , (val) )
+/**
+ * @brief writes the TLR_OTP field to the TLR_OTP register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_tlr_otp(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mTlrOtp, STW_TLR_OTP_TLR_OTP_FIELD_MASK , (val) )
+/**
+ * @brief writes the VNTC_OTP field to the VNTC_OTP register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_vntc_otp(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mVntcOtp, STW_VNTC_OTP_VNTC_OTP_FIELD_MASK , (val) )
+/**
+ * @brief writes the GPIO6_FS field to the GPIO6_FS register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_gpio6_fs(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio6Fs, STW_GPIO6_FS_GPIO6_FS_FIELD_MASK , (val) )
+/**
+ * @brief writes the VRECT_ADC field to the VRECT_ADC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_vrect_adc(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mVrectAdc, STW_VRECT_ADC_VRECT_ADC_FIELD_MASK , (val) )
+/**
+ * @brief writes the VOUT_ADC field to the VOUT_ADC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_vout_adc(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mVoutAdc, STW_VOUT_ADC_VOUT_ADC_FIELD_MASK , (val) )
+/**
+ * @brief writes the IRECT_ADC field to the IRECT_ADC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_irect_adc(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mIrectAdc, STW_IRECT_ADC_IRECT_ADC_FIELD_MASK , (val) )
+/**
+ * @brief writes the TRECT_ADC field to the TRECT_ADC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_trect_adc(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mTrectAdc, STW_TRECT_ADC_TRECT_ADC_FIELD_MASK , (val) )
+/**
+ * @brief writes the TLR_ADC field to the TLR_ADC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_tlr_adc(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mTlrAdc, STW_TLR_ADC_TLR_ADC_FIELD_MASK , (val) )
+/**
+ * @brief writes the VNTC_ADC field to the VNTC_ADC register 
+ * @param dev ptr to stwlc68 device
+ */
+#define stw_set_vntc_adc(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mVntcAdc, STW_VNTC_ADC_VNTC_ADC_FIELD_MASK , (val) )
 
 /*******************************************************************************
   Configs                                                                            

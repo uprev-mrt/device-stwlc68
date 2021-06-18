@@ -238,7 +238,99 @@ fields:
     - PROT_OD2:      #create flags and fields in the register
       - Irect_OCP_Out_Disc:      {bit: 0, desc: Irect_OCP_Out_Disc }
 
+    - CHIP_ID
+    
+    - CHIP_REV
+    
+    - ROM_ID
+    
+    - CFG_ID
+    
+    - TRIM_ID
+    
+    - PATCH_ID
+    
+    - AC_FREQ
+    
+    - S_STR_TX
+    
+    - VOUT_SET
+    
+    - VTH_AOE
+    
+    - VDROP_V0
 
+    - VDROP_V1
+
+    - VDROP_V2
+    
+    - VDROP_V3
+    
+    - VDROP_C1
+
+    - VDROP_C2
+
+    - VDROP_C3
+    
+    - MSG_TX0
+    
+    - MSG_TX1
+    
+    - MSG_TX2
+    
+    - MSG_TX3
+    
+    - MSG_TX4
+    
+    - MSG_TX5
+    
+    - MSG_TX6
+    
+    - MSG_TX7
+    
+    - MSG_TX8
+    
+    - EPT_MSG
+    
+    - FOD_CTC
+    
+    - FOD_GSC
+    
+    - FOD_OLC
+    
+    - FOD_DCR
+    
+    - VRECT_RE
+    
+    - RPP_TX
+    
+    - SS_MIN_TX
+    
+    - CS_OFFS
+    
+    - IDLE_CC
+    
+    - TRECT_OTP
+    
+    - TLR_OTP
+    
+    - VNTC_OTP
+    
+    - GPIO6_FS
+    
+    - VRECT_ADC
+    
+    - VOUT_ADC
+    
+    - IRECT_ADC
+    
+    - TRECT_ADC
+    
+    - TLR_ADC
+    
+    - VNTC_ADC
+    
+    
 
 ###########################################################################################################
 #                                   Preset Configs                                                        #
