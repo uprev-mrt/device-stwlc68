@@ -3,8 +3,8 @@ name: name_of_device
 category: Device
 description: description
 datasheet: link to datasheet
-mfg: device manufacturer
-mfg_pn: manufacturer part number
+mfr: device manufacturer
+mfr_pn: manufacturer part number
 digikey_pn: digikey part number
 
 prefix: wm  #prefix used in code generation

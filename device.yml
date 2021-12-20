@@ -4,8 +4,8 @@ author: Mark Bayless
 created: 05/26/2021
 description: Wireless charger
 datasheet: https://https://www.st.com/resource/en/datasheet/stwlc68.pdf
-mfg: STMicroelectronics
-mfg_pn: STWLC68JRH
+mfr: STMicroelectronics
+mfr_pn: STWLC68JRH
 digikey_pn: 497-STWLC68JRHTR-ND
 prefix: stw  #prefix used in code generation
 bus: I2C    # defines the buses that can be used to access registers 
